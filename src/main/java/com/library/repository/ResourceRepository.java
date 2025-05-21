@@ -21,11 +21,7 @@ public interface ResourceRepository extends JpaRepository<Resource, Long> {
     
     List<Resource> findByAvailable(boolean available);
     
-    @Query("SELECT r FROM Resource r WHERE " +
-           "(:title IS NULL OR LOWER(r.title) LIKE LOWER(CONCAT('%', :title, '%'))) AND " +
-           "(:author IS NULL OR LOWER(r.author) LIKE LOWER(CONCAT('%', :author, '%'))) AND " +
-           "(:category IS NULL OR LOWER(r.category) LIKE LOWER(CONCAT('%', :category, '%'))) AND " +
-           "(:isbn IS NULL OR r.isbn LIKE CONCAT('%', :isbn, '%'))")
+    @Query("SELECT r FROM Resource r WHERE " +"(:title IS NULL OR LOWER(r.title) LIKE LOWER(CONCAT('%', :title, '%'))) AND " + "(:author IS NULL OR LOWER(r.author) LIKE LOWER(CONCAT('%', :author, '%'))) AND " + "(:category IS NULL OR LOWER(r.category) LIKE LOWER(CONCAT('%', :category, '%'))) AND " + "(:isbn IS NULL OR r.isbn LIKE CONCAT('%', :isbn, '%'))")
     List<Resource> findByMultipleParameters(@Param("title") String title,
                                            @Param("author") String author,
                                            @Param("category") String category,

@@ -24,9 +24,6 @@ public interface LoanRepository extends JpaRepository<Loan, Long> {
     @Query("SELECT l FROM Loan l WHERE l.user.id = :userId AND l.returned = false AND l.dueDate < CURRENT_TIMESTAMP")
     List<Loan> findOverdueLoansByUser(@Param("userId") Long userId);
     
-    @Query("SELECT l FROM Loan l WHERE " +
-           "(l.loanDate BETWEEN :startDate AND :endDate) OR " +
-           "(l.returnDate BETWEEN :startDate AND :endDate)")
-    List<Loan> findByDateRange(@Param("startDate") LocalDateTime startDate, 
-                              @Param("endDate") LocalDateTime endDate);
+    @Query("SELECT l FROM Loan l WHERE " + "(l.loanDate BETWEEN :startDate AND :endDate) OR " + "(l.returnDate BETWEEN :startDate AND :endDate)")
+    List<Loan> findByDateRange(@Param("startDate") LocalDateTime startDate, @Param("endDate") LocalDateTime endDate);
 }

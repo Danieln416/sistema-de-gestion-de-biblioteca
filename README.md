@@ -2,13 +2,9 @@
 
 Este proyecto implementa un sistema de gestión para la biblioteca de la UPTC Seccional Sogamoso que permite administrar préstamos de material bibliográfico, consultar usuarios con retrasos en devoluciones, y generar listados de préstamos y recursos.
 
-## Diagrama de Clases
-
-![Diagrama de Clases](./class-diagram.png)
-
 ## Tecnologías utilizadas
 
-* Java 17
+* Java 1.8
 * Spring Boot 3.2.2
 * Spring Data JPA
 * PostgreSQL
@@ -29,8 +25,7 @@ Este proyecto implementa un sistema de gestión para la biblioteca de la UPTC Se
 
 1. Clonar el repositorio:
 ```bash
-git clone https://github.com/estudiante/library-management.git
-cd library-management
+https://github.com/Danieln416/sistema-de-gestion-de-biblioteca.git
 ```
 
 2. Compilar y ejecutar el proyecto:
